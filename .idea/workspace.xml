@@ -10,7 +10,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a37dc37-874f-4e09-8789-1910df5b1a41" name="Default Changelist" comment="Initial commit" />
+    <list default="true" id="0a37dc37-874f-4e09-8789-1910df5b1a41" name="Default Changelist" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/QgController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Qg.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_06_215738_create_qgs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/site.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/missoes.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/qg/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MissoesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MissoesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Missoes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Missoes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,18 +145,26 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1eE8QIpTFbwUsZk8uCOaFsWjkSB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../xamppp/php/php.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\J10Manutencao\PhpstormProjects\qgtenancy\resources\views\layout" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -167,6 +187,7 @@
       <workItem from="1593884371687" duration="63000" />
       <workItem from="1594048098614" duration="3731000" />
       <workItem from="1594053814385" duration="158000" />
+      <workItem from="1594053977046" duration="6560000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1593884278744</created>
@@ -182,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593884317833</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1594054111734</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594054111734</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,8 +229,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="262" y="147" key="#CLI_Interpreters" timestamp="1593876921798">
@@ -213,14 +243,18 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="462" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593876915758" />
+    <state x="444" y="415" key="NewPhpFileDialog" timestamp="1594064214800">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="444" y="415" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1594064214800" />
     <state x="171" y="137" width="1023" height="710" key="SettingsEditor" timestamp="1593880532949">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="171" y="137" width="1023" height="710" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1593880532949" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1593884395963">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1594054123005">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1593884395963" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594054123005" />
     <state x="420" y="383" width="515" height="217" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1593884243124">
       <screen x="0" y="0" width="1280" height="984" />
     </state>

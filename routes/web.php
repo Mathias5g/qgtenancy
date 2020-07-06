@@ -17,7 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nomes', ['as' => 'nomes.listar', 'uses' => 'MissoesController@ListarNome']);
+Route::get('/', ['as' => 'qg.login', 'uses' => 'QgController@index']);
+Route::get('/cadastro', ['as' => 'qg.cadastro', 'uses' => 'QgController@cadastro']);
+Route::post('/cadastro/create', ['as' => 'qg.cadastro.create', 'uses' => 'QgController@create']);
+
+Route::get('/home', ['as' => 'home.home']);
+
+Route::get('/missoes', ['as' => 'missoes.missoes', 'uses' => 'MissoesController@index']);
+Route::get('/missoes/adicionar', ['as' => 'missoes.adicionar', 'uses' => 'MissoesController@index']);
+Route::post('/missoes/adicionar/create', ['as' => 'missoes.adicionar.create', 'uses' => 'MissoesController@index']);
+Route::get('/missoes/detalhes/{id}', ['as' => 'missoes.adicionar.detalhes', 'uses' => 'MissoesController@index']);
+Route::get('/missoes/detalhes/{id}/editar', ['as' => 'missoes.adicionar.editar', 'uses' => 'MissoesController@index']);
+Route::delete('/missoes/detalhes/{id}/deletar', ['as' => 'missoes.adicionar.deletar', 'uses' => 'MissoesController@index']);
+
 /*
 Route::get('/artigos', function() {
     return response()->json([
