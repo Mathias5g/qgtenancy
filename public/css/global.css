@@ -1,0 +1,38 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+/* FONTS */
+.font-medium {
+    font-weight: 400;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+/* BUTTONS */
+.btn {
+    border-radius: 5px;
+    border: none;
+}
+.btn-blue {
+    color: #fff;
+    background-color: #2185d0;
+}
+.btn-red {
+    color: #fff;
+    background-color: #d01919;
+}
+.btn-green {
+    color: #fff;
+    background-color: #21ba45;
+}
+
+/* INPUTS */
+.checkbox-rounded {
+    height: 1.3rem;
+    width: 1.3rem;
+    background: #eee;
+    border-radius: 50%;
+
+
+}
