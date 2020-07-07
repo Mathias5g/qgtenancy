@@ -1,3 +1,9 @@
+:root {
+    --blue-color: #2185d0;
+    --red-color: #d01919;
+    --green-color: #21ba45;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
@@ -16,23 +22,32 @@
 }
 .btn-blue {
     color: #fff;
-    background-color: #2185d0;
+    background-color: var(--blue-color);
 }
 .btn-red {
     color: #fff;
-    background-color: #d01919;
+    background-color: var(--red-color);
 }
 .btn-green {
     color: #fff;
-    background-color: #21ba45;
+    background-color: var(--green-color);
 }
 
 /* INPUTS */
 .checkbox-rounded {
-    height: 1.3rem;
-    width: 1.3rem;
-    background: #eee;
+    position: relative;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
     border-radius: 50%;
-
-
+    vertical-align: middle;
+    border: 1px solid #868686;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
 }
+
+.checkbox-rounded:checked {
+    background-color: var(--green-color);
+}
+
