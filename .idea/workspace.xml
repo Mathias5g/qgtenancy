@@ -11,8 +11,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a37dc37-874f-4e09-8789-1910df5b1a41" name="Default Changelist" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Group.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Teste.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165905_create_groups_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/GroupSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/UsuarioSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165901_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165902_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165903_create_failed_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_06_164140_create_missoes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165904_create_missoes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_06_215738_create_qgs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165906_create_qgs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,15 +163,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../xamppp/php/php.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\J10Manutencao\PhpstormProjects\qgtenancy\app" />
+      <recent name="C:\Users\J10Manutencao\PhpstormProjects\qgtenancy\app\Models" />
       <recent name="C:\Users\J10Manutencao\PhpstormProjects\qgtenancy\resources\views\layout" />
     </key>
   </component>
@@ -180,6 +202,11 @@
       <workItem from="1594053814385" duration="158000" />
       <workItem from="1594053977046" duration="6806000" />
       <workItem from="1594133617284" duration="18727000" />
+      <workItem from="1594163363081" duration="89000" />
+      <workItem from="1594218865599" duration="3328000" />
+      <workItem from="1594227115378" duration="1173000" />
+      <workItem from="1594228340129" duration="2947000" />
+      <workItem from="1594234891104" duration="6896000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1593884278744</created>
@@ -223,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594162402626</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Confgiração mysql">
+      <created>1594163418098</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1594163418098</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,33 +282,46 @@
     <MESSAGE value="Adicionado novos controllers" />
     <MESSAGE value="Correções no HTML e CSS" />
     <MESSAGE value="Correções e CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correções e CSS" />
+    <MESSAGE value="Confgiração mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Confgiração mysql" />
   </component>
   <component name="WindowStateProjectService">
     <state x="262" y="147" key="#CLI_Interpreters" timestamp="1593876921798">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="262" y="147" key="#CLI_Interpreters/0.0.1280.984@0.0.1280.984" timestamp="1593876921798" />
+    <state x="232" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594237558105">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="232" y="150" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.984@0.0.1280.984" timestamp="1594237558105" />
     <state x="287" y="294" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594162662706">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="287" y="294" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.984@0.0.1280.984" timestamp="1594162662706" />
-    <state x="462" y="247" key="FileChooserDialogImpl" timestamp="1593876915758">
+    <state x="220" y="207" key="DBNavigator.DatasetFilterDialog" timestamp="1594231772969">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="462" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1593876915758" />
+    <state x="220" y="207" key="DBNavigator.DatasetFilterDialog/0.0.1280.984@0.0.1280.984" timestamp="1594231772969" />
+    <state x="170" y="147" key="DBNavigator.ProjectSettingsDialog" timestamp="1594227209775">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="170" y="147" key="DBNavigator.ProjectSettingsDialog/0.0.1280.984@0.0.1280.984" timestamp="1594227209775" />
+    <state x="462" y="247" key="FileChooserDialogImpl" timestamp="1594243874917">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="462" y="247" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1594243874917" />
     <state x="444" y="415" key="NewPhpFileDialog" timestamp="1594064214800">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="444" y="415" key="NewPhpFileDialog/0.0.1280.984@0.0.1280.984" timestamp="1594064214800" />
-    <state x="171" y="137" width="1023" height="710" key="SettingsEditor" timestamp="1593880532949">
+    <state x="171" y="137" width="1023" height="710" key="SettingsEditor" timestamp="1594227094379">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="171" y="137" width="1023" height="710" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1593880532949" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1594162405585">
+    <state x="171" y="137" width="1023" height="710" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594227094379" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1594163447463">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594162405585" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594163447463" />
     <state x="420" y="383" width="515" height="217" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1593884243124">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
@@ -283,5 +330,9 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="368" y="386" key="git4idea.ui.GitResetDialog/0.0.1280.984@0.0.1280.984" timestamp="1593884211244" />
+    <state x="303" y="211" key="search.everywhere.popup" timestamp="1594244675779">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="303" y="211" key="search.everywhere.popup/0.0.1280.984@0.0.1280.984" timestamp="1594244675779" />
   </component>
 </project>

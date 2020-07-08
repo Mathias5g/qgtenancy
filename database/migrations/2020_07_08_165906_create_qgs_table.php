@@ -15,6 +15,8 @@ class CreateQgsTable extends Migration
     {
         Schema::create('qgs', function (Blueprint $table) {
             $table->id();
+            $table->integer('idgroup')->unsigned();
+            $table->foreign('idgroup')->references('id')->on('groups');
             $table->timestamps();
         });
     }

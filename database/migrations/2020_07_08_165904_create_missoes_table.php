@@ -15,6 +15,13 @@ class CreateMissoesTable extends Migration
     {
         Schema::create('missoes', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('image');
+            $table->string('description');
+            $table->json('slots');
+            $table->enum('type', ['Oficial', '4Fun', 'Treinamentos']);
+            $table->integer('idgroup')->unsigned();
+            $table->foreign('idgroup')->references('id')->on('groups');
             $table->timestamps();
         });
     }
