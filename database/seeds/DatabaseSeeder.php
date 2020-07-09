@@ -11,6 +11,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        DB::table('users')->insert([
+            'username' => 'admin',
+            'email' => 'leandroabmathias@gmail.com',
+            'password' => bcrypt('admin'),
+            'permissions' => 'admin'
+        ]);
+
+        DB::table('groups')->insert([
+            'name' => 'Milsim Brasil',
+            'image' => 'naotem',
+            'communications' => "[['Discord' => 'discord.com']]",
+            'paid' => 'paid'
+        ]);
+
+        DB::table('user_groups')->insert([
+            'iduser' => 1,
+            'idgroup' => 1,
+        ]);
+
     }
 }

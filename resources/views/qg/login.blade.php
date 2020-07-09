@@ -3,11 +3,12 @@
 @section('title', 'Login - QG')
 @section('content')
     <div class="form-wrap">
-        <form action="#" class="form-login">
+        <form action="{{route('qg.login.entrar')}}" class="form-login" method="post">
+            {{csrf_field()}}
             <img src="{{asset('img/logos/arma3.png')}}" alt="Logo">
             <div class="two-inputs">
-                <input type="text" placeholder="Usuário" value="Admin">
-                <input type="password" placeholder="Senha" value="123">
+                <input type="text" placeholder="Usuário" value="admin" name="username">
+                <input type="password" placeholder="Senha" value="admin" name="password">
             </div>
             <button class="btn btn-blue font-bold">ENTRAR</button>
             <div class="checkbox-wrap">

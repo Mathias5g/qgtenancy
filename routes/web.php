@@ -12,13 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login', ['as' => 'login', 'uses' => 'QgController@index']);
-Route::post('/login/auth', ['as' => 'qg.login', 'uses' => 'QgController@index']);
+Route::get('/', function () {
+    echo "Nada para mostrar";
+});
+Route::get('/login', ['as' => 'qg.login', 'uses' => 'QgController@index']);
+Route::post('/login/entrar', ['as' => 'qg.login.entrar', 'uses' => 'QgController@entrar']);
 Route::get('/cadastro', ['as' => 'qg.cadastro', 'uses' => 'QgController@cadastro']);
 Route::post('/cadastro/create', ['as' => 'qg.cadastro.create', 'uses' => 'QgController@create']);
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/home', ['as' => 'home.home']);
+    Route::get('/home', ['as' => 'home.home', 'uses' => 'HomeController@index']);
 
     Route::get('/missoes', ['as' => 'missoes.missoes', 'uses' => 'MissoesController@index']);
     Route::get('/missoes/adicionar', ['as' => 'missoes.adicionar', 'uses' => 'MissoesController@index']);

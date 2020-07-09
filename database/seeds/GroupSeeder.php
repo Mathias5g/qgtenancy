@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class GroupSeeder extends Seeder
 {
@@ -15,8 +16,7 @@ class GroupSeeder extends Seeder
             'name' => 'Milsim Brasil',
             'image' => 'naotem',
             'communications' => "[['Discord' => 'discord.com']]",
-            'paid' => 'paid',
-            'iduser' => 1,
+            'paid' => 'paid'
         ]);
     }
 }

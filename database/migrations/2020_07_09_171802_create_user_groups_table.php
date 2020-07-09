@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMissoesTable extends Migration
+class CreateUserGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateMissoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('missoes', function (Blueprint $table) {
+        Schema::create('user_groups', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image');
-            $table->string('description');
-            $table->json('slots');
-            $table->enum('type', ['Oficial', '4Fun', 'Treinamentos']);
+            $table->integer('iduser')->unsigned();
+            $table->foreign('iduser')->references('id')->on('users');
             $table->integer('idgroup')->unsigned();
-            //$table->foreign('idgroup')->references('id')->on('groups');
+            $table->foreign('idgroup')->references('id')->on('groups');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateMissoesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('missoes');
+        Schema::dropIfExists('user_groups');
     }
 }

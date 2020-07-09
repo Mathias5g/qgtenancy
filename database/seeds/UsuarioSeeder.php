@@ -17,8 +17,7 @@ class UsuarioSeeder extends Seeder
             'username' => 'admin',
             'email' => 'leandroabmathias@gmail.com',
             'password' => bcrypt('admin'),
-            'permissions' => 'admin',
-            'idgroup' => 1,
+            'permissions' => 'admin'
         ]);
     }
 }

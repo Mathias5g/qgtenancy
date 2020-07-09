@@ -11,25 +11,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a37dc37-874f-4e09-8789-1910df5b1a41" name="Default Changelist" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Group.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Teste.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165905_create_groups_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/GroupSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UsuarioSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/UserGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_09_171802_create_user_groups_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/UserGroupSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/missoes.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/_includes/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165901_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165902_create_password_resets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165903_create_failed_jobs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_06_164140_create_missoes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165904_create_missoes_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_06_215738_create_qgs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165906_create_qgs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QgController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/QgController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_08_165901_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165901_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_08_165904_create_missoes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165904_create_missoes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_08_165905_create_groups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_08_165905_create_groups_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/GroupSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/GroupSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsuarioSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsuarioSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/qg/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/qg/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +206,8 @@
       <workItem from="1594218865599" duration="3328000" />
       <workItem from="1594227115378" duration="1173000" />
       <workItem from="1594228340129" duration="2947000" />
-      <workItem from="1594234891104" duration="6896000" />
+      <workItem from="1594234891104" duration="6982000" />
+      <workItem from="1594313160728" duration="9867000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1593884278744</created>
@@ -257,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594163418098</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implementação das rotas">
+      <created>1594245693737</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594245693737</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +291,8 @@
     <MESSAGE value="Correções no HTML e CSS" />
     <MESSAGE value="Correções e CSS" />
     <MESSAGE value="Confgiração mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Confgiração mysql" />
+    <MESSAGE value="Implementação das rotas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementação das rotas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="262" y="147" key="#CLI_Interpreters" timestamp="1593876921798">
@@ -318,10 +327,10 @@
       <screen x="0" y="0" width="1280" height="984" />
     </state>
     <state x="171" y="137" width="1023" height="710" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1594227094379" />
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1594163447463">
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2" timestamp="1594245700418">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
-    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594163447463" />
+    <state x="232" y="225" key="Vcs.Push.Dialog.v2/0.0.1280.984@0.0.1280.984" timestamp="1594245700418" />
     <state x="420" y="383" width="515" height="217" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1593884243124">
       <screen x="0" y="0" width="1280" height="984" />
     </state>

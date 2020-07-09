@@ -20,8 +20,6 @@ class CreateGroupsTable extends Migration
             $table->string('image');
             $table->json('communications');
             $table->enum('paid', ['free', 'paid']);
-            $table->integer('iduser')->unsigned();
-            $table->foreign('iduser')->references('id')->on('users');
             $table->timestamps();
         });
     }
