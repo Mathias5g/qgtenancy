@@ -14,20 +14,22 @@
 </head>
 <body>
 <header>
-    <nav>
+    <nav class="navbar">
         <div>
-            <ul>
-                <li>Home</li>
-                <li>Missões</li>
-                <li>Configurações</li>
+            <ul class="menu-esquerda">
+                <li><a href=""><img src="https://milsimbrasil.com/uploads/set_resources_19/9ec0040e8b1b93c105d065b85a6bd289_logofacebook.png" alt=""></a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Missões</a></li>
+                <li><a href="">Configurações</a></li>
             </ul>
         </div>
-        <div>
+        <div class="menu-direita">
             <input type="text" placeholder="Pesquisar">
-            <a href="{{route('qg.login.sair')}}"><button>Sair</button></a>
+            <button class="btn-red">Sair</button>
         </div>
     </nav>
 </header>
+
 @yield('content')
 </body>
 </html>
