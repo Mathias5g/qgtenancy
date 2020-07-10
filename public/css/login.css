@@ -7,6 +7,7 @@
     justify-content: center;
 }
 .form-wrap form {
+    position: relative;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -20,6 +21,7 @@
 .form-wrap form .two-inputs {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .form-wrap form .two-inputs input {
@@ -48,6 +50,12 @@
 
 .form-wrap form .checkbox-wrap input {
     margin-right: 10px;
+}
+
+.alert-danger {
+    position: absolute;
+    bottom: 105px;
+    color: red;
 }
 
 

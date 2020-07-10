@@ -24,7 +24,7 @@
         </div>
         <div>
             <input type="text" placeholder="Pesquisar">
-            <button>Sair</button>
+            <a href="{{route('qg.login.sair')}}"><button>Sair</button></a>
         </div>
     </nav>
 </header>

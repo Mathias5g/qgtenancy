@@ -7,7 +7,7 @@
                 <li>Configurações</li>
             </ul>
         </div>
-        <div>
+        <div class="menu-direita">
             <input type="text" placeholder="Pesquisar">
             <button>Sair</button>
         </div>
