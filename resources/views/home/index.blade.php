@@ -1,30 +1,26 @@
 @extends('layout.site')
 @section('title', 'Home - QG')
 @section('csspersonalizado', 'css/missoes.css')
+@section('scriptpersonalizado')
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.css">
+
 @section('content')
-    <h3>Lista de missões</h3>
-    <h2>Nenhuma missão para exibir</h2>
-    <table class="table-missions">
-        <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Tipo</th>
-            <th>Data</th>
-            <th>Status</th>
-            <th>Ações</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th>Jogatina Oficial</th>
-            <th>Devemos localizar os inimigos</th>
-            <th>Oficial</th>
-            <th>09/07/2020 - 20:00</th>
-            <th>Não jogada</th>
-            <th>Editar</th>
-        </tr>
-        </tbody>
-    </table>
-    <button>Cadastrar Missão</button>
+    <div style="width: 80%; height: 50%"  id='calendar'></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/locales-all.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                locale: 'pt-br',
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
+        });
+    </script>
+
 @endsection

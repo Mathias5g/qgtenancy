@@ -1,5 +1,5 @@
 .table-missions {
-    width: 95vw;
+    width: 95%;
     margin: 10px auto;
     padding-top: 10px;
     padding-bottom:  10px;
@@ -24,6 +24,7 @@
 .table-missions tbody tr {
     display: flex;
     margin: 10px 0;
+    align-items: center;
 }
 
 .table-missions thead tr th,

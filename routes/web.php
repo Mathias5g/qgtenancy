@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/missoes/detalhes/{id}', ['as' => 'missoes.adicionar.detalhes', 'uses' => 'Missoes\MissoesController@index']);
     Route::get('/missoes/detalhes/{id}/editar', ['as' => 'missoes.adicionar.editar', 'uses' => 'Missoes\MissoesController@index']);
     Route::delete('/missoes/detalhes/{id}/deletar', ['as' => 'missoes.adicionar.deletar', 'uses' => 'Missoes\MissoesController@index']);
+    Route::get('/admin', ['as' => 'admin.admin', 'uses' => 'Admin\AdminController@index']);
 });
 
 
