@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('css/global.css')}}">
     <link rel="stylesheet" href=@yield('csspersonalizado')>
-    @yield('scriptpersonalizado')
     <title>@yield('titulo')</title>
 </head>
 <body>
@@ -34,5 +33,7 @@
 <div class="main-content">
     @yield('content')
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+@yield('scriptspersonalizados')
 </body>
 </html>
