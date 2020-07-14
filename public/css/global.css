@@ -158,11 +158,12 @@ header {
  }
 
 /*RESPONSIVO */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 425px) {
 /*HEADER - MENU*/
 header {
     height: 100px;
 }
+
 .navbar div {
     flex: 1;
 }
