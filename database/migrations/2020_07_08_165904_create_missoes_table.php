@@ -20,8 +20,7 @@ class CreateMissoesTable extends Migration
             $table->string('description');
             $table->json('slots');
             $table->enum('type', ['Oficial', '4Fun', 'Treinamentos']);
-            $table->integer('idgroup')->unsigned();
-            //$table->foreign('idgroup')->references('id')->on('groups');
+            $table->date('start');
             $table->timestamps();
         });
     }

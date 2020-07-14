@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('css/global.css')}}">
-    <link rel="stylesheet" href=@yield('csspersonalizado')>
+    @yield('cssheader')
+    @yield('scriptsheader')
     <title>@yield('titulo')</title>
 </head>
 <body>
 <header>
-    <nav class="navbar">
+    <nav class="menu-site">
         <div>
             <ul class="menu-esquerda">
                 <li><a href="{{route('home.home')}}"><img src="https://milsimbrasil.com/uploads/set_resources_19/9ec0040e8b1b93c105d065b85a6bd289_logofacebook.png" alt=""></a></li>
@@ -34,6 +35,6 @@
     @yield('content')
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-@yield('scriptspersonalizados')
+@yield('scriptsfooter')
 </body>
 </html>

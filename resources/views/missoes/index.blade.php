@@ -1,6 +1,8 @@
 @extends('layout.site')
 @section('title', 'Home - QG')
-@section('csspersonalizado', 'css/missoes.css')
+@section('cssheader')
+    <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
+@endsection
 @section('content')
 <h3>Lista de missões</h3>
 <h2>Nenhuma missão para exibir</h2>

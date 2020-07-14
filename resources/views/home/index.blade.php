@@ -1,22 +1,24 @@
 @extends('layout.site')
 @section('title', 'Home - QG')
-@section('csspersonalizado', 'css/missoes.css')
-@section('scriptpersonalizado')
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+@section('cssheader')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.css">
+@endsection
 @section('content')
-    <div style="width: 80%; height: 50%"  id='calendar'></div>
+    <div id='calendar'></div>
 @endsection
 
-@section('scriptspersonalizados')
+@section('scriptsfooter')
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/locales-all.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const calendarEl = document.getElementById('calendar');
             const calendar = new FullCalendar.Calendar(calendarEl, {
+                timeZone: 'America/Sao_Paulo',
+                events: '/missoes/datejson',
                 locale: 'pt-br',
-                initialView: 'dayGridMonth'
+                initialView: 'dayGridMonth',
+                height: 'auto'
             });
             calendar.render();
         });

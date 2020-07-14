@@ -1,6 +1,8 @@
 @extends('layout.site')
 @section('title', 'Home - QG')
-@section('csspersonalizado', 'css/missoes.css')
+@section('cssheader')
+@endsection
+
 @section('content')
     Administração
 @endsection
