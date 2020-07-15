@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             'slots' => serialize($slotsArray),
             'type' => 'Oficial',
             'start' => '2020-07-15 20:00:00',
+            'groupid' => 1,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);

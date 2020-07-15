@@ -9,7 +9,9 @@ use App\Missoes;
 class CalendarController extends Controller
 {
     public function index() {
-        $users = DB::table('missoes')->select('id', 'title', 'start')->get();
-        return response()->json($users);;
+        $id = auth()->user()->id;
+        $userId = $groupId = DB::table('user_groups')->select('idgroup')->where('iduser', $id)->get();
+        $users = DB::table('missoes')->select('id', 'title', 'start')->where('groupid', $userId)->get();
+        return response()->json($users);
     }
 }

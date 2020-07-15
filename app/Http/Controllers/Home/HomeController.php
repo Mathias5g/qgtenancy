@@ -9,7 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.index');
+        $nome = auth()->user()->username;
+        return view('home.index', compact('nome'));
     }
 
     /**
