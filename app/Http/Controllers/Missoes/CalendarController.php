@@ -11,7 +11,7 @@ class CalendarController extends Controller
     public function index() {
         $id = auth()->user()->id;
         $userId = $groupId = DB::table('user_groups')->select('idgroup')->where('iduser', $id)->get();
-        $users = DB::table('missoes')->select('id', 'title', 'start')->where('groupid', $userId)->get();
-        return response()->json($users);
+        $users = DB::table('missoes')->select('id', 'title', 'start')->where('groupid', 2)->get();
+        return response()->json([$id, $userId, $users]);
     }
 }
