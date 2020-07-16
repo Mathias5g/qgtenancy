@@ -9,6 +9,7 @@ use App\Missoes;
 class MissoesController extends Controller
 {
     public function index() {
-        return view('missoes.index');
+        $permissoes = auth()->user()->permissions;
+        return view('missoes.index', compact('permissoes'));
     }
 }

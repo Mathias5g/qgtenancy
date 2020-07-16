@@ -1,5 +1,6 @@
 <?php
 
+use App\UserGroup;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ class UserGroupSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('user_groups')->insert([
+        UserGroup::create([
             'iduser' => 1,
             'idgroup' => 1,
         ]);

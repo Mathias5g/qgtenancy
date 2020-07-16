@@ -10,8 +10,8 @@ class CalendarController extends Controller
 {
     public function index() {
         $id = auth()->user()->id;
-        $userId = $groupId = DB::table('user_groups')->select('idgroup')->where('iduser', $id)->get();
-        $users = DB::table('missoes')->select('id', 'title', 'start')->where('groupid', 2)->get();
-        return response()->json([$id, $userId, $users]);
+        $groupId = DB::table('user_groups')->select('idgroup')->where('iduser', $id)->first();
+        $missions = DB::table('missoes')->select('id', 'title', 'start')->where('groupid', $groupId->idgroup)->get();
+        return response()->json($missions);
     }
 }

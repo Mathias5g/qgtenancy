@@ -22,7 +22,7 @@
                 <li><a href="{{route('home.home')}}"><img src="https://milsimbrasil.com/uploads/set_resources_19/9ec0040e8b1b93c105d065b85a6bd289_logofacebook.png" alt=""></a></li>
                 <li><a href="{{route('home.home')}}">Home</a></li>
                 <li><a href="{{route('missoes.missoes')}}">Missões</a></li>
-                @if(auth()->user()->permissions == 'admin')
+                @if($permissoes == 'admin')
                 <li><a href="{{route('admin.admin')}}">Configurações</a></li>
                 @endif
             </ul>

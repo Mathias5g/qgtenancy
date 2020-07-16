@@ -14,7 +14,9 @@
             <th>Tipo</th>
             <th>Data</th>
             <th>Status</th>
+            @if ($permissoes == 'admin' || $permissoes == 'moderator')
             <th>Ações</th>
+            @endif
         </tr>
     </thead>
     <tbody>
@@ -24,7 +26,9 @@
         <th>Oficial</th>
         <th>09/07/2020 - 20:00</th>
         <th>Não jogada</th>
+        @if ($permissoes == 'admin' || $permissoes == 'moderator')
         <th>Editar</th>
+        @endif
     </tr>
     </tbody>
 </table>
