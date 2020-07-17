@@ -9,8 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $permissoes = auth()->user()->permissions;
-        return view('home.index', compact('permissoes'));
+        return view('home.index');
     }
 
     /**
