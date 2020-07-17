@@ -14,8 +14,8 @@ class UserGroupSeeder extends Seeder
     public function run()
     {
         UserGroup::create([
-            'iduser' => 1,
-            'idgroup' => 1,
+            'iduser' => 3,
+            'idgroup' => 2,
         ]);
     }
 }

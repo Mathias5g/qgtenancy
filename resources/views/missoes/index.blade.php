@@ -1,5 +1,5 @@
 @extends('layout.site')
-@section('title', 'Home - QG')
+@section('title', 'Missões - QG')
 @section('cssheader')
     <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
 @endsection
@@ -13,13 +13,13 @@
             <th>Descrição</th>
             <th>Tipo</th>
             <th>Data</th>
-            @if ($permissoes == 'admin' || $permissoes == 'moderator')
+            @if (auth()->user()->permissions == 'admin' || auth()->user()->permissions == 'moderator')
             <th>Ações</th>
             @endif
         </tr>
     </thead>
     <tbody>
-    @foreach ($missionsData as $item)
+    @foreach ($missionData as $item)
     <tr>
         <th>{{$item->title}}</th>
         <th>Devemos localizar os inimigos</th>
@@ -35,14 +35,14 @@
                 @break
         @endswitch
         <th>{{$item->start}}</th>
-        @if ($permissoes == 'admin' || $permissoes == 'moderator')
+        @if (auth()->user()->permissions == 'admin' || auth()->user()->permissions == 'moderator')
         <th>Editar</th>
         @endif
     </tr>
     @endforeach
     </tbody>
 </table>
-@if ($permissoes == 'admin' || $permissoes == 'moderator')
-<button class="btn btn-blue">Cadastrar Missão</button>
+@if (auth()->user()->permissions == 'admin' || auth()->user()->permissions == 'moderator')
+<a href="{{route('missoes.adicionar')}}"><button class="btn btn-blue" id='btn-missoes'>Cadastrar Missão</button></a>
 @endif
 @endsection

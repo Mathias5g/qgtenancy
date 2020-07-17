@@ -11,7 +11,11 @@ class MissoesController extends Controller
 {
     public function index() {
         $useriId = auth()->user()->id;
-        $missionsData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
-        return view('missoes.index', compact('missionsData'));
+        $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
+        return view('missoes.index', compact('missionData'));
+    }
+
+    public function adicionar() {
+        return view('missoes.adicionar');
     }
 }

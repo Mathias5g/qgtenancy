@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', ['as' => 'home.home', 'uses' => 'Home\HomeController@index']);
 
     Route::get('/missoes', ['as' => 'missoes.missoes', 'uses' => 'Missoes\MissoesController@index']);
-    Route::get('/missoes/adicionar', ['as' => 'missoes.adicionar', 'uses' => 'Missoes\MissoesController@index']);
+    Route::get('/missoes/adicionar', ['as' => 'missoes.adicionar', 'uses' => 'Missoes\MissoesController@adicionar']);
     Route::post('/missoes/adicionar/create', ['as' => 'missoes.adicionar.create', 'uses' => 'Missoes\MissoesController@index']);
     Route::get('/missoes/detalhes/{id}', ['as' => 'missoes.adicionar.detalhes', 'uses' => 'Missoes\MissoesController@index']);
     Route::get('/missoes/detalhes/{id}/editar', ['as' => 'missoes.adicionar.editar', 'uses' => 'Missoes\MissoesController@index']);
