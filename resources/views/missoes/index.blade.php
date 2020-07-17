@@ -13,24 +13,36 @@
             <th>Descrição</th>
             <th>Tipo</th>
             <th>Data</th>
-            <th>Status</th>
             @if ($permissoes == 'admin' || $permissoes == 'moderator')
             <th>Ações</th>
             @endif
         </tr>
     </thead>
     <tbody>
+    @foreach ($missionsData as $item)
     <tr>
-        <th>Jogatina Oficial</th>
+        <th>{{$item->title}}</th>
         <th>Devemos localizar os inimigos</th>
-        <th>Oficial</th>
-        <th>09/07/2020 - 20:00</th>
-        <th>Não jogada</th>
+        @switch($item->type)
+            @case('Oficial')
+                <th><p class="tipo-missao oficial">Oficial</p></th>
+                @break
+            @case('4Fun')
+                <th><p class="tipo-missao treinamento">Treinamentos</p></th>
+                @break
+            @default
+                <th><p class="tipo-missao fun">4Fun</p></th>
+                @break
+        @endswitch
+        <th>{{$item->start}}</th>
         @if ($permissoes == 'admin' || $permissoes == 'moderator')
         <th>Editar</th>
         @endif
     </tr>
+    @endforeach
     </tbody>
 </table>
-<button>Cadastrar Missão</button>
+@if ($permissoes == 'admin' || $permissoes == 'moderator')
+<button class="btn btn-blue">Cadastrar Missão</button>
+@endif
 @endsection
