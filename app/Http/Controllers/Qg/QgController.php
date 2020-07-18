@@ -11,7 +11,7 @@ class QgController extends Controller
 {
 
     public function index() {
-        return view('index');
+        return redirect(route('qg.login'));
     }
     public function login() {
         return view('qg.login');
