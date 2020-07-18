@@ -13,10 +13,10 @@ class UsuarioSeeder extends Seeder
     public function run()
     {
         User::create([
-            'username' => 'Joao',
-            'email' => 'mathiaseap@gmail.com',
+            'username' => 'admin',
+            'email' => 'leandroabmathias@gmail.com',
             'password' => bcrypt('admin'),
-            'permissions' => 'member'
+            'permissions' => 'admin'
         ]);
     }
 }

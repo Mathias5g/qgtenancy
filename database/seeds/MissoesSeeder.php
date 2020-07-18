@@ -19,7 +19,7 @@ class MissoesSeeder extends Seeder
             'slots' => serialize(['Tenente', 'Sargento']),
             'type' => 'Oficial',
             'start' => '2020-07-15 20:00:00',
-            'groupid' => 2
+            'groupid' => 1
         ]);
     }
 }

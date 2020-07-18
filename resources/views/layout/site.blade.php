@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/global.css')}}">
     @yield('cssheader')
     @yield('scriptsheader')
-    <title>@yield('titulo')</title>
+    <title>@yield('title')</title>
 </head>
 <body>
 <header>
