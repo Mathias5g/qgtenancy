@@ -1,4 +1,5 @@
-.table-missions {
+.table-missions,
+.slots {
     width: 95%;
     margin: 10px auto;
     padding-top: 10px;
@@ -75,4 +76,78 @@
 
 a {
     align-self: flex-end;
+}
+
+.slots {
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/* ADICIONAR MISSAO */
+.title-slots {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+}
+
+.title-slots > h2 {
+    width: 100%;
+    margin: 0 0 10px 10px;
+}
+
+.tr-slots {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.tr-slots > .body-slots-groups,
+.tr-slots  > .body-slots-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.tr-slots  > .body-slots-groups > .div-group,
+.tr-slots  > .body-slots-members > .div-member {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.tr-slots  > .body-slots-groups > .div-group > input,
+.tr-slots  > .body-slots-members > .div-member > input {
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.tr-slots  > .body-slots-groups > .div-group > i,
+.tr-slots  > .body-slots-members > .div-member > i {
+    width: 10%;
+    height: 19px;
+    background-color: var(--red-color);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px transparent;
+    text-align: center;
+    color: #fff;
+    margin: 0 5px 5px 5px;
+}
+
+.tr-slots  > .body-slots-members > span {
+    width: 80%;
+    background-color: #c3c3c3;
+    border: 1px solid #c3c3c3;
+    margin: 0 auto 5px auto;
+}
+h3 {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 10px;
 }
