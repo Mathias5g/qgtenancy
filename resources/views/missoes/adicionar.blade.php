@@ -18,11 +18,29 @@
 
         var count = 0;
         addGroupSlots(count);
+
         function addGroupSlots(number) {
-            var trSlots = `<div class="tr-slots" id="group-${count}"></div>`;
-            var trGroup = '<div class="body-slots-groups"><h3>Grupo</h3><div class="div-group"><i class="fa fa-minus" aria-hidden="true"></i><input type="text" name="group[]" /></div></>';
-            var trMember = `<div class="body-slots-members" id="slot-${count}"><h3>Membros</h3><div class="div-member"><input type="text" name="member[]"/><i class="fa fa-minus" aria-hidden="true"></i></div><span></span></div>`;
-            var trMemberSlots = '<button type="button" id="addSlot"><i class="fa fa-plus" aria-hidden="true"></i>  Add slot</button>';
+            var trSlots = `
+            <div class="tr-slots" id="group-${count}">
+            </div>
+            `;
+            var trGroup = `
+            <div class="body-slots-groups">
+                <h3>Grupo</h3>
+                <div class="div-group">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                    <input type="text" name="group[]" />
+                </div>
+            </div>`;
+            var trMember = `
+            <div class="body-slots-members" id="slot-${count}">
+                <h3>Membros</h3>
+                <div class="div-member">
+                    <input type="text" name="member[]"/>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </div><span></span>
+            </div>`;
+            var trMemberSlots = `<button type="button" id="addSlot-${count}"><i class="fa fa-plus" aria-hidden="true"></i>  Add slot</button>`;
 
             $('.slots').append(trSlots);
             $(`#group-${count}`).append(trGroup);
@@ -30,16 +48,28 @@
             $(`#slot-${count}`).append(trMemberSlots);
         }
 
+        /*Função cria o grupo*/
         $('#addGroup').click(function() {
-            addGroupSlots(count);
             count++;
+            addGroupSlots(count);
         });
 
-        $('#addSlot').click(function() {
-            var trNewMember = `<div class="div-member"><input type="text" name="member[]"/><i class="fa fa-minus" aria-hidden="true"></i></div><span></span>`;
-            $(`#addSlot`).before(trNewMember);
-            console.log(count)
-        });
+        $('button').html(html).on('click', function() {
+            console.log($(this).attr('id'))
+        })
+
+        /*
+        $(document).click(function() {
+            if($(this).attr('id') == `addSlot-${count}`) {
+                //var trNewMember = `<div class="div-member"><input type="text" name="member[]"/><i class="fa fa-minus" aria-hidden="true"></i></div><span></span>`;
+                //$($(this).attr('id')).before(trNewMember);
+                console.log('true')
+            } else {
+                console.log('false')
+            }
+
+            console.log($(this).attr('id'))
+        });*/
     </script>
 @endsection
 
