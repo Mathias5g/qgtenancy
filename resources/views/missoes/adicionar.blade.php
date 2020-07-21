@@ -17,35 +17,39 @@
         $('#trumbowyg-demo').trumbowyg();
 
         var count = 0;
-        addGroupSlots(count);
+        //addGroupSlots(count);
 
         function addGroupSlots(number) {
-            var trSlots = `
+            var divSlots = `
             <div class="tr-slots" id="group-${count}">
             </div>
             `;
-            var trGroup = `
+            var divGroup = `
             <div class="body-slots-groups">
                 <h3>Grupo</h3>
                 <div class="div-group">
                     <i class="fa fa-minus" aria-hidden="true"></i>
-                    <input type="text" name="group[]" />
+                    <input type="text" name="group-${count}[]" />
                 </div>
             </div>`;
-            var trMember = `
+            var divMember = `
             <div class="body-slots-members" id="slot-${count}">
                 <h3>Membros</h3>
                 <div class="div-member">
-                    <input type="text" name="member[]"/>
+                    <input type="text" name="group-${count}[]"/>
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </div><span></span>
             </div>`;
-            var trMemberSlots = `<button type="button" id="addSlot-${count}"><i class="fa fa-plus" aria-hidden="true"></i>  Add slot</button>`;
+            var buttonAddMemberSlots = `<button type="button" class="addSlot" id="addSlot-${count}"><i class="fa fa-plus" aria-hidden="true"></i>  Add slot</button>`;
 
-            $('.slots').append(trSlots);
-            $(`#group-${count}`).append(trGroup);
-            $(`#group-${count}`).append(trMember);
-            $(`#slot-${count}`).append(trMemberSlots);
+            $('.slots').append(divSlots);
+            $(`#group-${count}`).append(divGroup);
+            $(`#group-${count}`).append(divMember);
+            $(`#slot-${count}`).append(buttonAddMemberSlots);
+        }
+
+        function addNewSlot(number) {
+
         }
 
         /*Função cria o grupo*/
@@ -54,22 +58,18 @@
             addGroupSlots(count);
         });
 
-        $('button').html(html).on('click', function() {
-            console.log($(this).attr('id'))
+        $(document).on('click', '.addSlot', function() {
+            var team = `team-${count}`;
+            var groupId = $(this).attr('id');
+            var number = groupId.substring(8, 9);
+            var divNewMember = `
+                <div class="div-member">
+                    <input type="text" name="group-${number}[]"/>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </div><span></span>
+            `;
+            $($(this)).before(divNewMember);
         })
-
-        /*
-        $(document).click(function() {
-            if($(this).attr('id') == `addSlot-${count}`) {
-                //var trNewMember = `<div class="div-member"><input type="text" name="member[]"/><i class="fa fa-minus" aria-hidden="true"></i></div><span></span>`;
-                //$($(this).attr('id')).before(trNewMember);
-                console.log('true')
-            } else {
-                console.log('false')
-            }
-
-            console.log($(this).attr('id'))
-        });*/
     </script>
 @endsection
 
