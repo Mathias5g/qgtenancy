@@ -18,4 +18,9 @@ class MissoesController extends Controller
     public function adicionar() {
         return view('missoes.adicionar');
     }
+
+    public function create(Request $req) {
+        $dados = $req->all();
+        dd($req->title);
+    }
 }
