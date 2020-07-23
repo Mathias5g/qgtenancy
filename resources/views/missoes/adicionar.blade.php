@@ -17,6 +17,7 @@
         $('#trumbowyg-demo').trumbowyg();
 
         var count = 0;
+        console.log(count);
         addGroupSlots(count);
 
         function addGroupSlots(number) {
@@ -56,10 +57,11 @@
         $('#addGroup').click(function() {
             count++;
             addGroupSlots(count);
-            if($('.groups').val() == 1 && count == 0){
-                $('.groups').val('2')
-            } else {
-                $('.groups').val(count)
+            console.log(count);
+            $('.groups').val(count+1);
+
+            if($('.groups').val() == 1 && count == 1){
+                $('.groups').val(2);
             }
 
         });
