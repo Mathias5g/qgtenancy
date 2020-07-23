@@ -5,5 +5,6 @@
     <div class="title-slots">
         <h2>Equipes e Membros</h2>
     </div>
+    <input type="hidden" class="groups" name="groups" value="1">
 </div>
 <button type="button" id="addGroup">Adicionar Grupo</button>

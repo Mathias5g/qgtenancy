@@ -21,6 +21,13 @@ class MissoesController extends Controller
 
     public function create(Request $req) {
         $dados = $req->all();
-        dd($req->title);
+        $numDeGrupos = $dados['groups'];
+        echo $numDeGrupos;
+        $slots = [];
+        for ($i=1; $i < $numDeGrupos; $i++) {
+            array_push($slots, $dados['group-'.$i]);
+        }
+        $slotsSerialized = serialize($slots);
+
     }
 }
