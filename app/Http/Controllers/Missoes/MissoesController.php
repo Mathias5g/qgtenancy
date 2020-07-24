@@ -3,12 +3,43 @@
 namespace App\Http\Controllers\Missoes;
 
 use App\Http\Controllers\Controller;
+use App\Missoes;
 use App\UserGroup;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class MissoesController extends Controller
 {
+    protected $title;
+    protected $image;
+    protected $description;
+    protected $groups;
+    protected $slots;
+    protected $type;
+    protected $start;
+    protected $groupid;
+    protected $group;
+    protected $createAt;
+
+    protected $userId;
+    protected $idgroup;
+
+    public function __construct(Request $request, UserGroup $userGroup)
+    {
+        $this->title = $request->title;
+        $this->image = $request->image;
+        $this->description = $request->description;
+        $this->groups = $request->groups;
+        $this->slots = [];
+        $this->type = $request->type;
+        $this->start = $request->start;
+        $this->groupid = $request->groupid;
+        $this->createAt = now();
+
+        dd(auth()->user()->id);
+        $this->idgroup = $userGroup::select('*')->where('idgroup', $this->userId)->first();
+    }
+
     public function index() {
         $useriId = auth()->user()->id;
         $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
@@ -19,16 +50,29 @@ class MissoesController extends Controller
         return view('missoes.adicionar');
     }
 
-    public function create(Request $req) {
+    public function create(Request $req, Missoes $missoes) {
+
+        echo $this->idgroup;
+        /*
         $dados = $req->all();
-        $userId = auth()->user()->id;
+        dd($dados);
+
+        /*
         $groupId = DB::table('user_groups')->select('idgroup')->where('idgroup', $userId)->first();
-        $numDeGrupos = $dados['groups'];
-        $slots = [];
-        for ($i=0; $i < $numDeGrupos; $i++) {
-            array_push($slots, $dados['group-'.$i]);
+
+        for ($i=0; $i < $this->groups; $i++) {
+            array_push($this->slots, $this->group . '-' . $i);
         }
-        $slotsSerialized = serialize($slots);
+        $slotsSerialized = serialize($slots);*/
+/*
+        $missoes->title = $this->title;
+        $missoes->image = $this->image;
+        $missoes->description = $this->description;
+        $missoes->type = $this->type;
+        $missoes->start = $this->groupid;
+
+
+
         $dataMission = [
             'title' => $dados['title'],
             'image' => 'https://get.wallhere.com/photo/Arma-3-video-games-1397771.jpg',
@@ -38,6 +82,11 @@ class MissoesController extends Controller
             'start' => '2020-07-25 20:00:00',
             'groupid' => $groupId->idgroup
         ];
+
+        dd($dataMission);
+
+        /*
         $lastId = DB::table('missoes')->insertGetId($dataMission);
+        */
     }
 }
