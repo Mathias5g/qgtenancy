@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Missoes;
 
 use App\Http\Controllers\Controller;
+use App\UserGroup;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\Missoes;
 
 class MissoesController extends Controller
 {
@@ -21,13 +21,23 @@ class MissoesController extends Controller
 
     public function create(Request $req) {
         $dados = $req->all();
+        $userId = auth()->user()->id;
+        $groupId = DB::table('user_groups')->select('idgroup')->where('idgroup', $userId)->first();
         $numDeGrupos = $dados['groups'];
-        echo $numDeGrupos;
         $slots = [];
-        for ($i=1; $i < $numDeGrupos; $i++) {
+        for ($i=0; $i < $numDeGrupos; $i++) {
             array_push($slots, $dados['group-'.$i]);
         }
         $slotsSerialized = serialize($slots);
-
+        $dataMission = [
+            'title' => $dados['title'],
+            'image' => 'https://get.wallhere.com/photo/Arma-3-video-games-1397771.jpg',
+            'description' => $dados['description'],
+            'slots' => $slotsSerialized,
+            'type' => 'Oficial',
+            'start' => '2020-07-25 20:00:00',
+            'groupid' => $groupId->idgroup
+        ];
+        $lastId = DB::table('missoes')->insertGetId($dataMission);
     }
 }
