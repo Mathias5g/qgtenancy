@@ -25,10 +25,13 @@ class MissoesController extends Controller
     protected $userId;
     protected $idGroup;
 
-    protected $id;
-
-    public function __construct(Request $request, Session $session)
+    public function __construct(Request $request)
     {
+        $this->middleware(function ($request, $next) {
+            $this->userId = Auth::user()->id;
+            return $next($request);
+        });
+
         $this->title = $request->title;
         $this->image = $request->image;
         $this->description = $request->description;
@@ -38,11 +41,9 @@ class MissoesController extends Controller
         $this->start = $request->start;
         $this->createAt = now();
 
-        $this->userId = $session::all();
-        $this->idGroup = DB::table('user_groups')->select('idgroup')->where('idgroup', $this->userId)->first();,
-        //$this->idGroup = $user->getId();
+        $this->idGroup = DB::table('user_groups')->select('idgroup')->where('idgroup', $this->userId)->first();
 
-        dd($this->id);
+        dd($this->userId);
     }
 
     public function index(Request $request) {
