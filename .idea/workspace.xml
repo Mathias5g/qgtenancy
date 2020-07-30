@@ -10,7 +10,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a37dc37-874f-4e09-8789-1910df5b1a41" name="Default Changelist" comment="Initial commit" />
+    <list default="true" id="0a37dc37-874f-4e09-8789-1910df5b1a41" name="Default Changelist" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SessionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Missoes/MissoesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Missoes/MissoesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Qg/QgController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Qg/QgController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Missoes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Missoes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UserGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UserGroup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +165,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -203,6 +215,8 @@
       <workItem from="1594412996364" duration="3892000" />
       <workItem from="1594528938414" duration="5040000" />
       <workItem from="1594591013550" duration="4033000" />
+      <workItem from="1595722078060" duration="10000" />
+      <workItem from="1595722322141" duration="8092000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1593884278744</created>
@@ -327,6 +341,14 @@
     </state>
     <state x="287" y="294" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.984@0.0.1280.984" timestamp="1594162662706" />
     <state x="431" y="311" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1594529180454" />
+    <state x="753" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1595723318752">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="753" y="236" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595723318752" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595722434828">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1595722434828" />
     <state x="736" y="402" width="447" height="265" key="ComposerInitDialogKey" timestamp="1594528976009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

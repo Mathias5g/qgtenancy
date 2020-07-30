@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Missoes extends Model
 {
+
+    protected $table = 'missoes';
+
     protected $fillable = [
         'title', 'image', 'description', 'slots', 'type',
         'start', 'groupid'

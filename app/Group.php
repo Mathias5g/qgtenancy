@@ -6,11 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
+    protected $table = 'groups';
+
     protected $fillable = [
-        'username', 'image', 'communications', 'paid', 'iduser'
+        'id', 'username', 'image', 'communications', 'paid', 'iduser'
     ];
 
     public function missions() {
         return $this->hasMany('Missoes');
+    }
+
+    public function userGroup(){
+        return $this->belongsToMany(UserGroup::class, 'user_groups', 'idgroup', 'iduser');
     }
 }

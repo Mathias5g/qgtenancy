@@ -6,15 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserGroup extends Model
 {
+
+    protected $table = 'user_groups';
+
     protected $fillable = [
         'id', 'iduser', 'idgroup'
     ];
 
-    public function groups() {
-        return $this->belongsTo('App\Group');
+    public function group() {
+        return $this->belongsTo(Group::class, 'iduser', 'id');
     }
 
-    public function users() {
-        return $this->belongsTo('App\User');
+    public function user() {
+        return $this->belongsTo(User::class, 'idgroup', 'id');
     }
 }

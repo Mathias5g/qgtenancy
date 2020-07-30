@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Qg;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 
 class QgController extends Controller
@@ -24,12 +25,16 @@ class QgController extends Controller
         ]);
 
         if(Auth::attempt($validatedData)){
+
+            Session::put(['id' => Auth::id()]);
             return redirect()->route('home.home');
+
         }
 
         return redirect()->route('qg.login');
     }
     public function sair() {
+        Session::flush();
         Auth::logout();
         return redirect()->route('qg.login');
     }

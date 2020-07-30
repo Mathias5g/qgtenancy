@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', ['as' => 'index', 'uses' => 'Qg\QgController@index']);
-Route::get('/login', ['as' => 'qg.login', 'uses' => 'Qg\QgController@login']);
-Route::post('/login/auth', ['as' => 'qg.login.auth', 'uses' => 'Qg\QgController@auth']);
-Route::get('/login/sair', ['as' => 'qg.login.sair', 'uses' => 'Qg\QgController@sair']);
+
+Route::group(['middleware' => 'web'], function() {
+    Route::get('/login', ['as' => 'qg.login', 'uses' => 'Qg\QgController@login']);
+    Route::post('/login/auth', ['as' => 'qg.login.auth', 'uses' => 'Qg\QgController@auth']);
+    Route::get('/login/sair', ['as' => 'qg.login.sair', 'uses' => 'Qg\QgController@sair']);
+});
+
 Route::get('/cadastro', ['as' => 'qg.cadastro', 'uses' => 'Qg\QgController@cadastro']);
 Route::post('/cadastro/create', ['as' => 'qg.cadastro.create', 'uses' => 'Qg\QgController@create']);
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => ['auth', 'web']], function() {
     Route::get('/home', ['as' => 'home.home', 'uses' => 'Home\HomeController@index']);
 
     Route::get('/missoes', ['as' => 'missoes.missoes', 'uses' => 'Missoes\MissoesController@index']);
@@ -32,6 +36,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/missoes/datejson', ['as' => 'missoes.json.data', 'uses' => 'Missoes\CalendarController@index']);
 });
+
+Route::get('session', 'SessionController@session');
 
 
 

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Missoes;
 
+use App\Group;
 use App\Http\Controllers\Controller;
-use App\Missoes;
-use App\UserGroup;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\SessionController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class MissoesController extends Controller
 {
@@ -17,14 +19,15 @@ class MissoesController extends Controller
     protected $slots;
     protected $type;
     protected $start;
-    protected $groupid;
     protected $group;
     protected $createAt;
 
     protected $userId;
-    protected $idgroup;
+    protected $idGroup;
 
-    public function __construct(Request $request, UserGroup $userGroup)
+    protected $id;
+
+    public function __construct(Request $request, Session $session)
     {
         $this->title = $request->title;
         $this->image = $request->image;
@@ -33,26 +36,30 @@ class MissoesController extends Controller
         $this->slots = [];
         $this->type = $request->type;
         $this->start = $request->start;
-        $this->groupid = $request->groupid;
         $this->createAt = now();
 
-        dd(auth()->user()->id);
-        $this->idgroup = $userGroup::select('*')->where('idgroup', $this->userId)->first();
+        $this->userId = $session::all();
+        $this->idGroup = DB::table('user_groups')->select('idgroup')->where('idgroup', $this->userId)->first();,
+        //$this->idGroup = $user->getId();
+
+        dd($this->id);
     }
 
-    public function index() {
+    public function index(Request $request) {
+
+        /*
         $useriId = auth()->user()->id;
         $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
-        return view('missoes.index', compact('missionData'));
+        return view('missoes.index', compact('missionData'));*/
+
     }
 
     public function adicionar() {
         return view('missoes.adicionar');
     }
 
-    public function create(Request $req, Missoes $missoes) {
+    public function create(Group $group) {
 
-        echo $this->idgroup;
         /*
         $dados = $req->all();
         dd($dados);
