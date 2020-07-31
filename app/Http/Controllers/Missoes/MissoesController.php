@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Missoes;
 
-use App\Group;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\SessionController;
+use App\Missoes;
+use App\UserGroup;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 class MissoesController extends Controller
 {
@@ -25,13 +23,12 @@ class MissoesController extends Controller
     protected $userId;
     protected $idGroup;
 
+    protected $slotsSerialized;
+
+    protected $dataMission;
+
     public function __construct(Request $request)
     {
-        $this->middleware(function ($request, $next) {
-            $this->userId = Auth::user()->id;
-            return $next($request);
-        });
-
         $this->title = $request->title;
         $this->image = $request->image;
         $this->description = $request->description;
@@ -40,18 +37,14 @@ class MissoesController extends Controller
         $this->type = $request->type;
         $this->start = $request->start;
         $this->createAt = now();
-
-        $this->idGroup = DB::table('user_groups')->select('idgroup')->where('idgroup', $this->userId)->first();
-
-        dd($this->userId);
     }
 
     public function index(Request $request) {
 
-        /*
+
         $useriId = auth()->user()->id;
         $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
-        return view('missoes.index', compact('missionData'));*/
+        return view('missoes.index', compact('missionData'));
 
     }
 
@@ -59,42 +52,32 @@ class MissoesController extends Controller
         return view('missoes.adicionar');
     }
 
-    public function create(Group $group) {
+    public function create(Request $request) {
+        $this->userId = $request->session()->get('id');
+        $this->idGroup = UserGroup::where('idgroup', $this->userId)->first();
 
-        /*
-        $dados = $req->all();
-        dd($dados);
-
-        /*
-        $groupId = DB::table('user_groups')->select('idgroup')->where('idgroup', $userId)->first();
-
-        for ($i=0; $i < $this->groups; $i++) {
-            array_push($this->slots, $this->group . '-' . $i);
+        //Primeira posição do array referente ao nome do grupo
+        if($this->groups > 0) {
+            for ($i=0; $i < $this->groups; $i++) {
+                array_push($this->slots, $request['group'.$i]);
+            }
+            $this->slotsSerialized = serialize($this->slots);
         }
-        $slotsSerialized = serialize($slots);*/
-/*
-        $missoes->title = $this->title;
-        $missoes->image = $this->image;
-        $missoes->description = $this->description;
-        $missoes->type = $this->type;
-        $missoes->start = $this->groupid;
 
-
-
-        $dataMission = [
-            'title' => $dados['title'],
-            'image' => 'https://get.wallhere.com/photo/Arma-3-video-games-1397771.jpg',
-            'description' => $dados['description'],
-            'slots' => $slotsSerialized,
+        $this->dataMission = [
+            'title' => $this->title,
+            'image' => 'https://milsimbrasil.com/uploads/set_resources_19/9ec0040e8b1b93c105d065b85a6bd289_logofacebook.png',
+            'description' => $this->description,
+            'slots' => $this->slotsSerialized,
             'type' => 'Oficial',
             'start' => '2020-07-25 20:00:00',
-            'groupid' => $groupId->idgroup
+            'groupid' => $this->idGroup->id
         ];
 
-        dd($dataMission);
+        $lastId = DB::table('missoes')->insertGetId($this->dataMission);
+        if($lastId > 0){
+            return redirect()->route('missoes.missoes');
+        }
 
-        /*
-        $lastId = DB::table('missoes')->insertGetId($dataMission);
-        */
     }
 }
