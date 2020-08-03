@@ -7,6 +7,7 @@ use App\Missoes;
 use App\UserGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class MissoesController extends Controller
 {
@@ -17,6 +18,7 @@ class MissoesController extends Controller
     protected $slots;
     protected $type;
     protected $start;
+    protected $slug;
     protected $group;
     protected $createAt;
 
@@ -37,11 +39,11 @@ class MissoesController extends Controller
         $this->type = $request->type;
         $this->start = $request->start;
         $this->createAt = now();
+
+        $this->slug = Str::slug($this->title);
     }
 
     public function index(Request $request) {
-
-
         $useriId = auth()->user()->id;
         $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
         return view('missoes.index', compact('missionData'));
@@ -70,7 +72,8 @@ class MissoesController extends Controller
             'description' => $this->description,
             'slots' => $this->slotsSerialized,
             'type' => 'Oficial',
-            'start' => '2020-07-25 20:00:00',
+            'start' => '2020-08-08 20:00:00',
+            'slug' => $this->slug,
             'groupid' => $this->idGroup->id
         ];
 
@@ -78,6 +81,11 @@ class MissoesController extends Controller
         if($lastId > 0){
             return redirect()->route('missoes.missoes');
         }
+    }
 
+    public function show($id) {
+        $missionData = Missoes::where(['id' => $id, 'groupid' => 1])->first();
+        $slots = unserialize($missionData->slots);
+        return view('missoes.detalhes', compact(['missionData', 'slots']));
     }
 }

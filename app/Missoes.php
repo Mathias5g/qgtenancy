@@ -11,7 +11,7 @@ class Missoes extends Model
 
     protected $fillable = [
         'title', 'image', 'description', 'slots', 'type',
-        'start', 'groupid'
+        'start'
     ];
 
     public function groups() {

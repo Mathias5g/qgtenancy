@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             UsuarioSeeder::class,
             GroupSeeder::class,
             UserGroupSeeder::class,
-            MissoesSeeder::class
+            //MissoesSeeder::class
         ]);
     }
 }

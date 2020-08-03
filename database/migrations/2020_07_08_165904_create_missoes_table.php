@@ -21,6 +21,7 @@ class CreateMissoesTable extends Migration
             $table->json('slots');
             $table->enum('type', ['Oficial', '4Fun', 'Treinamentos']);
             $table->date('start');
+            $table->string('slug');
             $table->integer('groupid')->bigIncrements();
             $table->foreign('groupid')->references('id')->on('groups')->onDelete('cascade');
             $table->timestamps();
