@@ -22,7 +22,7 @@
     @foreach ($missionData as $item)
     <tr>
     <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}">{{$item->title}}</a></th>
-        <th>Devemos localizar os inimigos</th>
+    <th>{{$item->description}}</th>
         @switch($item->type)
             @case('Oficial')
                 <th><p class="tipo-missao oficial">Oficial</p></th>

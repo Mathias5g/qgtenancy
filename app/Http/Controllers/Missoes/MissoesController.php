@@ -45,7 +45,7 @@ class MissoesController extends Controller
 
     public function index(Request $request) {
         $useriId = auth()->user()->id;
-        $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start', 'slug')->where('groupid', $useriId)->get();
+        $missionData = DB::table('missoes')->select('id', 'title', 'description', 'type', 'start', 'slug')->where('groupid', $useriId)->get();
         return view('missoes.index', compact('missionData'));
 
     }
