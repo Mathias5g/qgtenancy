@@ -45,7 +45,7 @@ class MissoesController extends Controller
 
     public function index(Request $request) {
         $useriId = auth()->user()->id;
-        $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start')->where('groupid', $useriId)->get();
+        $missionData = DB::table('missoes')->select('id', 'title', 'type', 'start', 'slug')->where('groupid', $useriId)->get();
         return view('missoes.index', compact('missionData'));
 
     }
@@ -83,8 +83,8 @@ class MissoesController extends Controller
         }
     }
 
-    public function show($id) {
-        $missionData = Missoes::where(['id' => $id, 'groupid' => 1])->first();
+    public function show($slug) {
+        $missionData = Missoes::where(['slug' => $slug, 'groupid' => 1])->first();
         $slots = unserialize($missionData->slots);
         return view('missoes.detalhes', compact(['missionData', 'slots']));
     }

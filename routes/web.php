@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth', 'web']], function() {
     Route::get('/missoes', ['as' => 'missoes.missoes', 'uses' => 'Missoes\MissoesController@index']);
     Route::get('/missoes/adicionar', ['as' => 'missoes.adicionar', 'uses' => 'Missoes\MissoesController@adicionar']);
     Route::post('/missoes/adicionar/create', ['as' => 'missoes.adicionar.create', 'uses' => 'Missoes\MissoesController@create']);
-    Route::get('/missoes/detalhes/{id}', ['as' => 'missoes.adicionar.detalhes', 'uses' => 'Missoes\MissoesController@show']);
+    Route::get('/missoes/detalhes/{slug}', ['as' => 'missoes.adicionar.detalhes', 'uses' => 'Missoes\MissoesController@show']);
     Route::get('/missoes/detalhes/{id}/editar', ['as' => 'missoes.adicionar.editar', 'uses' => 'Missoes\MissoesController@index']);
     Route::delete('/missoes/detalhes/{id}/deletar', ['as' => 'missoes.adicionar.deletar', 'uses' => 'Missoes\MissoesController@index']);
     Route::get('/admin', ['as' => 'admin.admin', 'uses' => 'Admin\AdminController@index']);

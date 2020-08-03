@@ -21,7 +21,7 @@
     <tbody>
     @foreach ($missionData as $item)
     <tr>
-        <th>{{$item->title}}</th>
+    <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}">{{$item->title}}</a></th>
         <th>Devemos localizar os inimigos</th>
         @switch($item->type)
             @case('Oficial')
