@@ -5,12 +5,10 @@
 @endsection
 @section('content')
 <h3>Lista de missões</h3>
-<h2>Nenhuma missão para exibir</h2>
 <table class="table-missions">
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Descrição</th>
             <th>Tipo</th>
             <th>Data</th>
             @if (auth()->user()->permissions == 'admin' || auth()->user()->permissions == 'moderator')
@@ -22,7 +20,6 @@
     @foreach ($missionData as $item)
     <tr>
     <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}">{{$item->title}}</a></th>
-    <th>{{$item->description}}</th>
         @switch($item->type)
             @case('Oficial')
                 <th><p class="tipo-missao oficial">Oficial</p></th>
@@ -34,9 +31,11 @@
                 <th><p class="tipo-missao fun">4Fun</p></th>
                 @break
         @endswitch
-        <th>{{$item->start}}</th>
+        <th>{{ date('d/m/Y - H:i', strtotime($item->start))}}</th>
         @if (auth()->user()->permissions == 'admin' || auth()->user()->permissions == 'moderator')
-        <th>Editar</th>
+        <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}"><i class="fa fa-arrow-right go-page" aria-hidden="true"></i></a><a href="#"><i class="fa fa-pencil edit" aria-hidden="true"></i></a><a href="{{route('missoes.adicionar.deletar', $item->slug)}}"><i class="fa fa-trash delete" aria-hidden="true"></i></a></th>
+        @else
+            <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}"><i class="fa fa-arrow-right go-page" aria-hidden="true"></i></a></th>
         @endif
     </tr>
     @endforeach

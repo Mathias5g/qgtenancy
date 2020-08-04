@@ -44,6 +44,23 @@
     font-weight: 400;
 }
 
+.table-missions tbody tr th a i {
+    margin: 5px;
+}
+
+.delete {
+    color: rgba(255, 0, 0, 0.8);
+
+}
+
+.edit {
+    color: rgba(255, 171, 74, 0.8);
+}
+
+.go-page {
+    color: rgba(0, 38, 255, 0.8);
+}
+
 .tipo-missao {
     color: #fff;
     border-radius: 5px;
@@ -150,4 +167,24 @@ h3 {
     width: 100%;
     border-bottom: 1px solid #cccccc;
     margin-bottom: 10px;
+}
+/*DATALHES*/
+.mission-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-info h1 {
+    margin: 10px auto;
+    font-size: 1.5rem;
+}
+
+.mission-info img {
+    width: 820px;
+    height: 310px;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: none;
 }

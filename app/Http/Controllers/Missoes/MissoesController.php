@@ -68,7 +68,7 @@ class MissoesController extends Controller
 
         $this->dataMission = [
             'title' => $this->title,
-            'image' => 'https://milsimbrasil.com/uploads/set_resources_19/9ec0040e8b1b93c105d065b85a6bd289_logofacebook.png',
+            'image' => 'https://www.wasd.pt/wp-content/uploads/2016/06/arma-3-nat-games-wallpaper-logo-1280x720.jpg',
             'description' => $this->description,
             'slots' => $this->slotsSerialized,
             'type' => 'Oficial',
@@ -87,5 +87,15 @@ class MissoesController extends Controller
         $missionData = Missoes::where(['slug' => $slug, 'groupid' => 1])->first();
         $slots = unserialize($missionData->slots);
         return view('missoes.detalhes', compact(['missionData', 'slots']));
+    }
+
+    public function delete($slug) {
+        $delete = DB::table('missoes')->where([
+            ['slug', $slug],
+            ['groupid', 1]
+        ])->delete();
+        if($delete > 0){
+            return redirect(route('missoes.missoes'));
+        }
     }
 }
