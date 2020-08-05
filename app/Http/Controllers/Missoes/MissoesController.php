@@ -89,9 +89,9 @@ class MissoesController extends Controller
         return view('missoes.detalhes', compact(['missionData', 'slots']));
     }
 
-    public function delete($slug) {
+    public function delete($id) {
         $delete = DB::table('missoes')->where([
-            ['slug', $slug],
+            ['id', $id],
             ['groupid', 1]
         ])->delete();
         if($delete > 0){

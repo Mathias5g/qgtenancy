@@ -33,9 +33,12 @@
         @endswitch
         <th>{{ date('d/m/Y - H:i', strtotime($item->start))}}</th>
         @if (auth()->user()->permissions == 'admin' || auth()->user()->permissions == 'moderator')
-        <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}"><i class="fa fa-arrow-right go-page" aria-hidden="true"></i></a><a href="#"><i class="fa fa-pencil edit" aria-hidden="true"></i></a><a href="{{route('missoes.adicionar.deletar', $item->slug)}}"><i class="fa fa-trash delete" aria-hidden="true"></i></a></th>
+        <th>
+            <i class="fa fa-arrow-right go-page" aria-hidden="true" id="{{$item->slug}}"></i>
+            <i class="fa fa-pencil edit" aria-hidden="true" id="{{$item->id}}"></i>
+            <i class="fa fa-trash delete" aria-hidden="true" id="{{$item->id}}"></i></th>
         @else
-            <th><a href="{{route('missoes.adicionar.detalhes', $item->slug)}}"><i class="fa fa-arrow-right go-page" aria-hidden="true"></i></a></th>
+            <th><i class="fa fa-arrow-right go-page" aria-hidden="true" onclick="erro()"></i></th>
         @endif
     </tr>
     @endforeach

@@ -44,13 +44,12 @@
     font-weight: 400;
 }
 
-.table-missions tbody tr th a i {
+.table-missions tbody tr th i {
     margin: 5px;
 }
 
 .delete {
     color: rgba(255, 0, 0, 0.8);
-
 }
 
 .edit {
@@ -59,6 +58,10 @@
 
 .go-page {
     color: rgba(0, 38, 255, 0.8);
+}
+
+.delete:hover, .edit:hover, .go-page:hover {
+    cursor: pointer;
 }
 
 .tipo-missao {
