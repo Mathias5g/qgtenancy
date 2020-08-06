@@ -3,7 +3,7 @@
 @section('cssheader')
     <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.21.0/ui/trumbowyg.min.css">
-@endsection
+    @endsection
 @section('content')
 <form action="{{route('missoes.adicionar.create')}}" method="post" enctype="multipart/form-data">
     {{ csrf_field() }}
@@ -14,6 +14,9 @@
 @section('scriptsfooter')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.21.0/trumbowyg.min.js"></script>
     <script>
+
+        ///missoes/adicionar - path
+
         $('#trumbowyg-demo').trumbowyg();
 
         var count = 0;
@@ -47,10 +50,6 @@
             $(`#group${count}`).append(divGroup);
             $(`#group${count}`).append(divMember);
             $(`#slot${count}`).append(buttonAddMemberSlots);
-        }
-
-        function addNewSlot(number) {
-
         }
 
         /*Função cria o grupo*/

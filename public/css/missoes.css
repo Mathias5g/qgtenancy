@@ -104,6 +104,18 @@ a {
 }
 
 /* ADICIONAR MISSAO */
+
+.details {
+
+}
+
+.details input,
+.details select {
+    border-radius: 5px;
+    border: solid 1px #c3c3c3;
+    padding: 5px;
+}
+
 .title-slots {
     width: 100%;
     border-bottom: 1px solid #cccccc;
@@ -166,11 +178,14 @@ a {
     border: 1px solid #c3c3c3;
     margin: 0 auto 5px auto;
 }
+
 h3 {
     width: 100%;
     border-bottom: 1px solid #cccccc;
     margin-bottom: 10px;
 }
+
+
 /*DATALHES*/
 .mission-info {
     display: flex;
