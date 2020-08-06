@@ -19356,7 +19356,22 @@ if (urlAtual == '/missoes') {
     window.location.href = "missoes/detalhes/".concat($(this).attr('id'));
   });
   editPage.on('click', function () {
-    alert('ok');
+    /*$("#dialog-confirm").dialog({
+        resizable: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        buttons: {
+          "Delete all items": function() {
+              alert("Itens deletados");
+            $(this).dialog( "close" );
+          },
+          Cancel: function() {
+            alert("Cancelado");
+            $(this).dialog( "close" );
+          }
+        }
+      });*/
   });
   deletePage.on('click', function () {
     window.location.href = "missoes/detalhes/".concat($(this).attr('id'), "/deletar");
