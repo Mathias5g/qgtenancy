@@ -19378,6 +19378,48 @@ if (urlAtual == '/missoes') {
   });
 }
 
+if (urlAtual == '/missoes/adicionar') {
+  var addGroupSlots = function addGroupSlots(number) {
+    var divSlots = "\n            <div class=\"tr-slots\" id=\"group".concat(count, "\">\n            </div>\n            ");
+    var divGroup = "\n            <div class=\"body-slots-groups\">\n                <h3>Grupo</h3>\n                <div class=\"div-group\">\n                    <i class=\"fa fa-minus\" aria-hidden=\"true\"></i>\n                    <input type=\"text\" name=\"group".concat(count, "[]\" required/>\n                </div>\n            </div>");
+    var divMember = "\n            <div class=\"body-slots-members\" id=\"slot".concat(count, "\">\n                <h3>Membros</h3>\n                <div class=\"div-member\">\n                    <input type=\"text\" name=\"group").concat(count, "[]\" required/>\n                    <i class=\"fa fa-minus\" aria-hidden=\"true\"></i>\n                </div><span></span>\n            </div>");
+    var buttonAddMemberSlots = "<button type=\"button\" class=\"addSlot\" id=\"addSlot-".concat(count, "\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i>  Add slot</button>");
+    $('.slots').append(divSlots);
+    $("#group".concat(count)).append(divGroup);
+    $("#group".concat(count)).append(divMember);
+    $("#slot".concat(count)).append(buttonAddMemberSlots);
+  };
+  /*Função cria o grupo*/
+
+
+  $('#datetimepicker').datetimepicker({
+    format: 'Y-m-d H:i',
+    lang: 'pt-br'
+  }); ///missoes/adicionar - path
+
+  $('#trumbowyg-demo').trumbowyg();
+  var count = 0;
+  console.log(count);
+  addGroupSlots(count);
+  $('#addGroup').click(function () {
+    count++;
+    addGroupSlots(count);
+    console.log(count);
+    $('.groups').val(count + 1);
+
+    if ($('.groups').val() == 1 && count == 1) {
+      $('.groups').val(2);
+    }
+  });
+  $(document).on('click', '.addSlot', function () {
+    var team = "team-".concat(count);
+    var groupId = $(this).attr('id');
+    var number = groupId.substring(8, 9);
+    var divNewMember = "\n                <div class=\"div-member\">\n                    <input type=\"text\" name=\"group".concat(number, "[]\" required/>\n                    <i class=\"fa fa-minus\" aria-hidden=\"true\"></i>\n                </div><span></span>\n            ");
+    $($(this)).before(divNewMember);
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
