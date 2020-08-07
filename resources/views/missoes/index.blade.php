@@ -24,7 +24,7 @@
             @case('Oficial')
                 <th><p class="tipo-missao oficial">Oficial</p></th>
                 @break
-            @case('4Fun')
+            @case('Treinamentos')
                 <th><p class="tipo-missao treinamento">Treinamentos</p></th>
                 @break
             @default

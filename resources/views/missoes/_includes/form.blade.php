@@ -2,12 +2,12 @@
     <input type="text" name="title" placeholder="Título da Missão">
     <input type="file" name="image" accept="image/*">
     <select name="type">
-        <option value="">Selectione</option>
+        <option value="">Selecione</option>
         <option value="Oficial">Oficial</option>
         <option value="4Fun">4Fun</option>
         <option value="Treinamentos">Treinamentos</option>
     </select>
-    <input type="text" id="date-time">
+    <input type="text" id="datetimepicker" name="start">
 </div>
 <textarea name="description" id="trumbowyg-demo"></textarea>
 <div class="slots">

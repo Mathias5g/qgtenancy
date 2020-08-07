@@ -71,8 +71,8 @@ class MissoesController extends Controller
             'image' => 'https://www.wasd.pt/wp-content/uploads/2016/06/arma-3-nat-games-wallpaper-logo-1280x720.jpg',
             'description' => $this->description,
             'slots' => $this->slotsSerialized,
-            'type' => 'Oficial',
-            'start' => '2020-08-08 20:00:00',
+            'type' => $this->type,
+            'start' => $this->start,
             'slug' => $this->slug,
             'groupid' => $this->idGroup->id
         ];

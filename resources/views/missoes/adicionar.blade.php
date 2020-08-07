@@ -3,6 +3,7 @@
 @section('cssheader')
     <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.21.0/ui/trumbowyg.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/>
     @endsection
 @section('content')
 <form action="{{route('missoes.adicionar.create')}}" method="post" enctype="multipart/form-data">
@@ -13,8 +14,13 @@
 @endsection
 @section('scriptsfooter')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.21.0/trumbowyg.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script>
 
+        $('#datetimepicker').datetimepicker({
+        format:'Y-m-d H:i',
+        lang:'pt-br'
+        });
         ///missoes/adicionar - path
 
         $('#trumbowyg-demo').trumbowyg();
