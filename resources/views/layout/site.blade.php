@@ -6,11 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Styles-->
+    <link rel="shortcut icon" href="https://milsimbrasil.com/uploads/set_resources_19/9ec0040e8b1b93c105d065b85a6bd289_logofacebook.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/12422af1ba.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/reset.css')}}">
-    <link rel="stylesheet" href="{{asset('css/global.css')}}">
+    <link rel="stylesheet" href="{{url(mix('css/app.css'))}}">
     @yield('cssheader')
+    <!--Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     @yield('scriptsheader')
     <title>@yield('title')</title>
 </head>
@@ -36,9 +39,7 @@
 <div class="main-content">
     @yield('content')
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 @yield('scriptsfooter')
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{url(mix('js/app.js'))}}"></script>
 </body>
 </html>

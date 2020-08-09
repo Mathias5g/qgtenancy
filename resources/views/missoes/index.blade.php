@@ -1,8 +1,5 @@
 @extends('layout.site')
 @section('title', 'Missões - QG')
-@section('cssheader')
-    <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
-@endsection
 @section('content')
 <h3>Lista de missões</h3>
 <table class="table-missions">

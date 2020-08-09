@@ -1,8 +1,5 @@
 @extends('layout.site')
 @section('title', 'Detalhes - QG')
-@section('cssheader')
-    <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
-@endsection
 @section('content')
     <div class="mission-info">
         <h1>{{$missionData->title}}</h1>

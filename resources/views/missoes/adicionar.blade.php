@@ -1,7 +1,6 @@
 @extends('layout.site')
 @section('title', 'Adicionar Missão - QG')
 @section('cssheader')
-    <link rel="stylesheet" href="{{asset('css/missoes.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.21.0/ui/trumbowyg.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/>
     @endsection

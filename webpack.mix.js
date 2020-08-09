@@ -13,5 +13,9 @@ const mix = require('laravel-mix');
 
 mix
 .js('resources/js/app.js', 'public/js')
-.js('resources/js/calendar.js', 'public/js/home')
-.sass('resources/sass/app.scss', 'public/css').version();;
+.styles([
+    'resources/css/reset.css',
+    'resources/css/global.css',
+    'resources/css/login.css',
+    'resources/css/missoes.css'
+], 'public/css/app.css').version();
